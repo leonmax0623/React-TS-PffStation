@@ -1,0 +1,80 @@
+@import "./../../../../../scss/core/core";
+
+.own-website {
+  @extend %section;
+
+  overflow: hidden;
+
+  &__list {
+    max-width: rem(216);
+
+    padding: 0;
+    margin: rem(80) 0;
+
+    font-weight: 500;
+    font-size: rem(20);
+    line-height: rem(32);
+
+    li {
+      display: inline-flex;
+      align-items: baseline;
+
+
+      &:before {
+        margin: 0 $contentGutter 0 0;
+
+        @include pseudo-icon($pfi-star, 24);
+        color: $primary;
+
+        transform: translate(0, rem(8));
+      }
+
+      &:not(:first-of-type) {
+        margin-top: rem(12);
+      }
+    }
+  }
+
+  &__right {
+    grid-column: 2;
+
+    margin: auto 0 rem(10) auto;
+  }
+
+  @include min-wide(phonesLg) {
+    .container {
+      display: grid;
+      grid-auto-columns: 1fr 2fr;
+    }
+  }
+
+  @include max-wide(phonesLg) {
+    --container-position: relative;
+
+    .own-website__right {
+      position: absolute;
+      right: -50%;
+      bottom: 0;
+      z-index: -1;
+
+      &:before {
+        position: absolute;
+        top: rem(-20);
+        left: rem(-20);
+        right: 0;
+        bottom: rem(-20);;
+        z-index: 1;
+
+        content: '';
+
+        background: linear-gradient(90deg, rgba(255,255,255,1) -5%, rgba(255, 255, 255, 0) 100%);
+      }
+    }
+  }
+
+  @include max-wide(phones) {
+    .own-website__right:before {
+      background: linear-gradient(90deg, rgba(255, 255, 255, 1) 25%, rgba(255, 255, 255, 0) 100%);
+    }
+  }
+}

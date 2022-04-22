@@ -1,0 +1,55 @@
+@import "./../../../../scss/core/core";
+
+.button {
+  position: relative;
+  z-index: 1;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0 rem(19);
+
+  min-height: rem(40);
+
+  font-weight: 500;
+  font-size: rem(18);
+  line-height: 1;
+  white-space: nowrap;
+  letter-spacing: rem(0.3375);
+  color: $light;
+
+  border-radius: rem(8);
+
+  transition: .5s linear;
+  transition-property: background-color, box-shadow, color, transform;
+  background: $primary;
+  cursor: pointer;
+
+  &.--null {
+    background-color: transparent !important;
+
+    color: $primary;;
+  }
+
+  &.--large {
+    min-height: rem(56);
+    padding: 0 rem(24);
+  }
+
+  @include only-mouse {
+    &:hover {
+      box-shadow: $sh-form-element;
+
+      &.--null {
+        color: $light;
+
+        background-color: #{$primary} !important;
+      }
+    }
+
+    &:active {
+      transform: translate(0, rem(8));
+    }
+  }
+}

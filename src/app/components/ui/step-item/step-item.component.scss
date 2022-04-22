@@ -1,0 +1,35 @@
+@import "./../../../../scss/core/core";
+
+.step-item {
+  display: inline-flex;
+  align-items: center;
+
+  &:before {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-right: $contentGutter;
+
+    width: rem(40);
+    height: rem(40);
+
+    content: attr(data-step);
+
+    border-radius: 50%;
+    background: $gray;
+  }
+
+  &__capt {
+    font-size: rem(14);
+    line-height: rem(20);
+
+    color: $dark;
+  }
+
+  @include max-wide(phonesLg) {
+    br {
+      display: none;
+    }
+  }
+}

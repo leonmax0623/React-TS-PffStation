@@ -1,0 +1,27 @@
+@import "./../../../../../scss/core/core";
+
+.get-access {
+  --heading-margin: #{0 0 rem(40)};
+  --container-align-items: center;
+  --container-justify-content: center;
+
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+
+  min-height: var(--get-access-height);
+
+  background: $secondary;
+
+  &__main {
+    display: flex;
+    flex-flow: column;
+    gap: rem(40);
+  }
+}

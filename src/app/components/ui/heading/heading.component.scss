@@ -1,0 +1,67 @@
+@import "./../../../../scss/core/core";
+
+.heading {
+  margin: var(--heading-margin, rem(24));
+
+  font-weight: 800;
+  font-size: rem(48);
+  line-height: rem(56);
+
+  text-align: center;
+  letter-spacing: rem(-1);
+
+  &.--h2 {
+    font-size: rem(32);
+    line-height: rem(36);
+    letter-spacing: rem(-0.5);
+  }
+
+  &.--counter {
+    position: relative;
+
+    text-align: var(--heading-align, left);
+
+    &:before {
+      position: absolute;
+      top: rem(-28);
+      left: $containerOffset;
+
+      content: '0' attr(data-count);
+      font-style: italic;
+      font-weight: normal;
+      font-size: rem(14);
+      line-height: rem(20);
+    }
+  }
+
+  span {
+    font-weight: 300;
+  }
+
+
+  @include max-wide(phonesLg) {
+    font-size: rem(40);
+
+    &.--mob-center {
+      text-align: center !important;
+
+      &:before {
+        position: absolute;
+        top: rem(-28);
+        left: 50%;
+
+        transform: translate(-50%, 0);
+
+      }
+    }
+
+  }
+  //&.--h3 {
+  //}
+  //
+  //&.--h4 {
+  //}
+  //
+  //&.--h5 {
+  //}
+}

@@ -1,0 +1,39 @@
+@import "./../../../../scss/core/core";
+
+.input {
+  display: inline-flex;
+  align-items: center;
+
+  min-width: rem(240);
+
+  &__field {
+    width: 100%;
+    min-height: rem(56);
+
+    padding: 0 $contentGutter;
+
+    color: $dark;
+    font-size: rem(20);
+
+    border: rem(2) solid $light;
+    border-radius: rem(8);
+    background: $light;
+
+    transition: $transition-default;
+    transition-property: box-shadow, opacity, border-color;
+
+    @include placeholder {
+      opacity: 0.56;
+    }
+
+    @include only-mouse {
+      &:focus {
+        border-color: $primary;
+      }
+
+      &:hover, &:focus {
+        box-shadow: $sh-form-element;
+      }
+    }
+  }
+}

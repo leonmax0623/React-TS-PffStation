@@ -1,0 +1,17 @@
+@import "../../../../scss/core/core";
+
+.logo {
+
+  color: $dark;
+
+  svg path{
+     fill: currentColor;
+
+  }
+
+  @include only-mouse() {
+    &:hover {
+      color: $primary;
+    }
+  }
+}
